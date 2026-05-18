@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+routes:
+  # 每个 slack_path 对应一个"假的 Slack Webhook 端点"
+  # 将应用的 Slack Webhook URL 替换为 http://<your-host>:8080<slack_path>
+
+  - slack_path: /hook/team-a
+    dingtalk:
+      webhook: https://oapi.dingtalk.com/robot/send?access_token=YOUR_TOKEN_A
+      secret: YOUR_SECRET_A   # 钉钉机器人加签密钥，未开启加签则留空或删除此行
+
+  - slack_path: /hook/team-b
+    dingtalk:
+      webhook: https://oapi.dingtalk.com/robot/send?access_token=YOUR_TOKEN_B
+      secret: YOUR_SECRET_B
